@@ -12,5 +12,5 @@ public interface SessionRepository extends JpaRepository<Session, Long> {
     Session findSessionByAccount(@Param("account") Account account);
 
     @Query(value = "select s from Session s where s.token=:token")
-    Session findSessionByToken(@Param("token") String token);
+    Session findSessionByToken(@Param("token") java.util.UUID token);
 }

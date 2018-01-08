@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
@@ -22,7 +21,6 @@ public class Session {
     @JoinColumn(name = "account_id")
     private Account account;
 
-    @NotNull
     private java.util.UUID token;
 
     @Temporal(TemporalType.TIMESTAMP)
