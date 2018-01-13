@@ -9,4 +9,5 @@ public interface RoleService {
     List<Role> list();
     Role create(Role role);
     Role update(Role role);
+    Role get(int id);
 }

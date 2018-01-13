@@ -8,6 +8,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.util.Date;
 import java.util.Set;
 
 @Entity
@@ -36,7 +37,6 @@ public class Account {
     @Size(max = 250)
     private String name;
 
-
     @Column(name = "surname")
     @Size(max = 250)
     private String surname;
@@ -44,6 +44,10 @@ public class Account {
     @Column(name = "email")
     @Size(max = 1000)
     private String email;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "create_date")
+    private Date createDate;
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(

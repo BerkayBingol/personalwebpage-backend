@@ -15,16 +15,16 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Override
     public List<Article> list() {
-        return null;
+        return articleRepository.findAllByOrderByCreateDateDesc();
     }
 
     @Override
     public Article create(Article article) {
-        return null;
+        return articleRepository.save(article);
     }
 
     @Override
     public Article update(Article article) {
-        return null;
+        return articleRepository.save(article);
     }
 }
