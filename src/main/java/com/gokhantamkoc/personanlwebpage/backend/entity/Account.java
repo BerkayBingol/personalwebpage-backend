@@ -8,6 +8,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.util.Set;
 
 @Entity
 @Table(name = "account")
@@ -31,7 +32,24 @@ public class Account {
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
+    @Column(name = "name")
+    @Size(max = 250)
+    private String name;
+
+
+    @Column(name = "surname")
+    @Size(max = 250)
+    private String surname;
+
     @Column(name = "email")
     @Size(max = 1000)
     private String email;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "account_role",
+            joinColumns = @JoinColumn(name = "account_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")
+    )
+    private Set<Role> roles;
 }
