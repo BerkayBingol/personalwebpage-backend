@@ -10,6 +10,6 @@ public class IndexController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String index() {
-        return "Personal Web Page - Backend v1.0.0";
+        return "Personal Web Page - Backend v1.0.0 - Gökhan TAMKOÇ";
     }
 }
