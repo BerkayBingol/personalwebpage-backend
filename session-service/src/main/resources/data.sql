@@ -1,0 +1,1 @@
+insert into account(id, email, password, username) values(uuid_generate_v4(),'gokhantamkoc@gmail.com', '2603310', 'gokhantamkoc');
